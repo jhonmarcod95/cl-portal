@@ -38,9 +38,12 @@ defineOptions({
                 <PlaceholderPattern />
             </div>
         </div>
+
+        <!--  -->
         <div
             class="border-sidebar-border/70 dark:border-sidebar-border relative min-h-[100vh] flex-1 rounded-xl border md:min-h-min"
         >
+            s
             <PlaceholderPattern />
         </div>
     </div>
