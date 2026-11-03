@@ -372,32 +372,52 @@ onMounted(() => {
     <Head title="Credit Limit" />
 
     <div class="flex h-full flex-1 flex-col gap-6 overflow-x-auto rounded-xl p-4">
-        <!-- Stats -->
-        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <Card v-for="stat in statCards" :key="stat.title" class="gap-3 py-5">
-                <CardContent class="flex flex-col gap-3">
-                    <div class="flex items-start justify-between">
-                        <div>
-                            <p class="text-sm text-muted-foreground">
-                                {{ stat.title }}
-                            </p>
-                            <p class="text-2xl font-semibold">{{ stat.value }}</p>
+        <!-- Stats Section with Green Background -->
+        <div class="rounded-2xl bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 p-5 shadow-md">
+            <div class="mb-4">
+                <h2 class="text-lg font-bold text-white">
+                    Credit Limit Overview
+                </h2>
+                <p class="text-sm text-emerald-50">
+                    Summary of sales order credit limit status
+                </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                <Card
+                    v-for="stat in statCards"
+                    :key="stat.title"
+                    class="border-0 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                    <CardContent class="flex flex-col gap-3 py-5">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-muted-foreground">
+                                    {{ stat.title }}
+                                </p>
+                                <p class="text-2xl font-bold text-foreground">
+                                    {{ stat.value }}
+                                </p>
+                            </div>
+
+                            <div
+                                :class="[stat.color, 'flex size-10 items-center justify-center rounded-xl text-white shadow-sm']"
+                            >
+                                <component :is="stat.icon" class="size-5" />
+                            </div>
                         </div>
-                        <div
-                            :class="[stat.color, 'flex size-10 items-center justify-center rounded-full text-white']"
+
+                        <a
+                            :href="stat.href"
+                            class="text-sm font-medium text-emerald-700 hover:text-emerald-900"
                         >
-                            <component :is="stat.icon" class="size-5" />
-                        </div>
-                    </div>
-                    <a
-                        :href="stat.href"
-                        class="text-sm text-muted-foreground hover:text-foreground"
-                    >
-                        {{ stat.link }}
-                    </a>
-                </CardContent>
-            </Card>
+                            {{ stat.link }}
+                        </a>
+                    </CardContent>
+                </Card>
+            </div>
         </div>
+
 
         <!-- For approval -->
         <SalesOrderTable

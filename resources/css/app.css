@@ -170,3 +170,19 @@
         @apply bg-background text-foreground;
     }
 }
+
+/* Success Toast - Green 85% opacity */
+[data-sonner-toast][data-type="success"] {
+    background: rgba(22, 163, 74, 0.65) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(21, 128, 61, 0.65) !important;
+    backdrop-filter: blur(8px);
+}
+
+/* Error Toast - Red 85% opacity */
+[data-sonner-toast][data-type="error"] {
+    background: rgba(220, 38, 38, 0.65) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(185, 28, 28, 0.65) !important;
+    backdrop-filter: blur(8px);
+}

@@ -24,7 +24,7 @@ defineOptions({
 <template>
     <Head title="Confirm password" />
 
-    <PasskeyVerify
+    <!-- <PasskeyVerify
         :routes="{
             options: confirmOptions(),
             submit: confirmStore(),
@@ -32,7 +32,7 @@ defineOptions({
         label="Confirm with passkey"
         loading-label="Confirming..."
         separator="Or confirm with password"
-    />
+    /> -->
 
     <Form
         v-bind="store.form()"

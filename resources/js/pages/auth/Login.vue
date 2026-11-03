@@ -15,7 +15,7 @@ import PasskeyVerify from '@/components/PasskeyVerify.vue';
 
 defineOptions({
     layout: {
-        title: 'Log in to your account',
+        title: 'Log in to your CL Portal account',
         description: 'Enter your email and password below to log in',
     },
 });
@@ -36,7 +36,7 @@ defineProps<{
         {{ status }}
     </div>
 
-    <PasskeyVerify />
+
 
     <Form
         v-bind="store.form()"
@@ -61,7 +61,7 @@ defineProps<{
             </div>
 
             <div class="grid gap-2">
-                <div class="flex items-center justify-between">
+                <!-- <div class="flex items-center justify-between">
                     <Label for="password">Password</Label>
                     <TextLink
                         v-if="canResetPassword"
@@ -71,7 +71,7 @@ defineProps<{
                     >
                         Forgot your password?
                     </TextLink>
-                </div>
+                </div> -->
                 <PasswordInput
                     id="password"
                     name="password"
@@ -83,12 +83,12 @@ defineProps<{
                 <InputError :message="errors.password" />
             </div>
 
-            <div class="flex items-center justify-between">
+            <!-- <div class="flex items-center justify-between">
                 <Label for="remember" class="flex items-center space-x-3">
                     <Checkbox id="remember" name="remember" :tabindex="3" />
                     <span>Remember me</span>
                 </Label>
-            </div>
+            </div> -->
 
             <Button
                 type="submit"
@@ -102,9 +102,9 @@ defineProps<{
             </Button>
         </div>
 
-        <div class="text-muted-foreground text-center text-sm">
+        <!-- <div class="text-muted-foreground text-center text-sm">
             Don't have an account?
             <TextLink :href="register()" :tabindex="5">Sign up</TextLink>
-        </div>
+        </div> -->
     </Form>
 </template>

@@ -4,7 +4,10 @@ use App\Http\Controllers\CreditLimitController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
-Route::inertia('/', 'Welcome')->name('home');
+
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 
 Route::middleware(['auth', 'verified'])->group(function () {
 

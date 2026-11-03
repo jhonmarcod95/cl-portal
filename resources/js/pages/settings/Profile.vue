@@ -36,7 +36,7 @@ const user = computed(() => page.props.auth.user);
         <Heading
             variant="small"
             title="Profile"
-            description="Update your name and email address"
+            description="Your name and email address details"
         />
 
         <Form
@@ -54,6 +54,7 @@ const user = computed(() => page.props.auth.user);
                     required
                     autocomplete="name"
                     placeholder="Full name"
+                    disabled="true"
                 />
                 <InputError class="mt-2" :message="errors.name" />
             </div>
@@ -69,6 +70,7 @@ const user = computed(() => page.props.auth.user);
                     required
                     autocomplete="username"
                     placeholder="Email address"
+                    disabled="true"
                 />
                 <InputError class="mt-2" :message="errors.email" />
             </div>
@@ -93,13 +95,13 @@ const user = computed(() => page.props.auth.user);
                 </div>
             </div>
 
-            <div class="flex items-center gap-4">
+            <!-- <div class="flex items-center gap-4">
                 <Button :disabled="processing" data-test="update-profile-button"
                     >Save</Button
                 >
-            </div>
+            </div> -->
         </Form>
     </div>
 
-    <DeleteUser />
+    <!-- <DeleteUser /> -->
 </template>

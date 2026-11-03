@@ -106,7 +106,7 @@ defineOptions({
             </div>
         </Form>
     </div>
-
+<!-- 
     <ManageTwoFactor
         :canManageTwoFactor="canManageTwoFactor"
         :requiresConfirmation="requiresConfirmation"
@@ -116,5 +116,5 @@ defineOptions({
     <ManagePasskeys
         :canManagePasskeys="canManagePasskeys"
         :passkeys="passkeys"
-    />
+    /> -->
 </template>
