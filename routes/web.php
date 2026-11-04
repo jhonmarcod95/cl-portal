@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CreditLimitController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -64,6 +65,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 
     Route::post('/log-api-error', [DashboardController::class, 'logApiError']);
+
+    Route::prefix('/users')->name('users.')->controller(UserController::class)->group(function (){
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('{user}/edit', 'edit')->name('edit');
+        Route::get('/', 'index')->name('index');
+        Route::put('/{user}', 'update')->name('update');
+    });
 });
 
 //// store cl

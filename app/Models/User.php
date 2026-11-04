@@ -83,6 +83,9 @@ class User extends Authenticatable implements PasskeyUser, Auditable
 
     public function plants()
     {
-        return $this->hasMany(PlantUser::class);
+        return $this->belongsToMany(Plant::class, 'plant_users', 'user_id', 'plant_code', 'id', 'plant_code')
+            ->withPivot('id', 'deleted_at')
+            ->withTimestamps()
+            ->wherePivotNull('deleted_at');
     }
 }
